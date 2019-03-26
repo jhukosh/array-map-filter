@@ -60,6 +60,28 @@ En sortie:
  */
 
 function getMoviesFreshness(movies) {
+  let result = movies.map(item => {
+    if (item.rating < 60 ) {
+      return {
+        name : item.name,
+        rating : item.rating,
+        label : "rotten",
+      } 
+    };
+      if (item.rating > 75){
+      return {
+        name : item.name,
+        rating : item.rating,
+        label : "certified fresh",
+      }
+    };
+    return {
+      name : item.name,
+      rating : item.rating,
+      label : "fresh",
+    };
+  })
+  return result;
 }
 
 
