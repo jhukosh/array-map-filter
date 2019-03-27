@@ -39,6 +39,14 @@ Exemple d'entrée:
  */
 
 function searchWordFilter(items, search) {
+  let result = items.filter( item => {
+    let itemMin = item.toLowerCase();
+    search = search.toLowerCase();
+    if (itemMin.includes(search)) {
+      return item;
+    }
+  })
+  return result;
 }
 
 // Ne pas modifier l'export
